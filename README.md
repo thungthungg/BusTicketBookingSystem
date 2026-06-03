@@ -137,17 +137,6 @@ This project is developed for educational and academic purposes only.
 
 ---
 
-## ▶️ How to Run the System
-
-1. Clone the repository:
-   git clone https://github.com/your-username/your-repo-name.git
-
-2. Open the project in NetBeans / IntelliJ IDEA / Eclipse.
-
-3. Run the `Main.java` file.
-
----
-
 ## 🖥️ System Features (Interactive Menu)
 
 The system now works as a **full interactive application** using a menu system:
