@@ -62,7 +62,7 @@ Handles seat reservations, booking confirmation, cancellation, and booking infor
 These exceptions improve system reliability by handling invalid seat selections and duplicate bookings.
 
 ### Main Class
-Acts as the entry point of the application and demonstrates the system functionality through testing.
+Acts as the entry point of the application and demonstrates the system functionality.
 
 ---
 
@@ -134,3 +134,56 @@ This project is developed as a group assignment. Team members contribute to diff
 ## 📄 License
 
 This project is developed for educational and academic purposes only.
+
+---
+
+## ▶️ How to Run the System
+
+1. Clone the repository:
+   git clone https://github.com/your-username/your-repo-name.git
+
+2. Open the project in NetBeans / IntelliJ IDEA / Eclipse.
+
+3. Run the `Main.java` file.
+
+---
+
+## 🖥️ System Features (Interactive Menu)
+
+The system now works as a **full interactive application** using a menu system:
+
+### Main Menu Options
+1. Create Booking  
+   - Enter passenger details  
+   - Choose ticket type (Standard / Premium)  
+   - Enter destination and price  
+
+2. Choose Seat  
+   - Select seat number (1–100)  
+   - Prevent duplicate seat booking  
+
+3. Confirm Booking  
+   - Finalize booking  
+   - Calculate total price  
+
+4. View Booking  
+   - Display full booking details  
+   - Show passenger + ticket info  
+
+5. Cancel Booking  
+   - Release reserved seat  
+   - Cancel current booking  
+
+6. Exit System  
+
+---
+
+## 🎯 System Upgrade
+
+This version converts the project from a simple test program into a **fully interactive Java OOP system** with:
+
+- Menu-driven user interface (JOptionPane)
+- Real booking workflow
+- Seat management system
+- Exception handling integration
+- Full OOP structure working together
