@@ -29,9 +29,9 @@ public void setStatus(String status) { this.status = status; }
 
 @Override
 public double applyDiscount(double percent) {
-discount = price * percent / 100;
-price = price - discount;
-return price;
+    discount = price * percent / 100;
+    price = price - discount;
+    return price;
 }
 
 public abstract void displayTicket();
