@@ -70,7 +70,7 @@ public class Main {
                     }
 
                     try {
-                        int seat = Integer.parseInt(JOptionPane.showInputDialog("Enter Seat Number (1-100):"));
+                        int seat = Integer.parseInt(JOptionPane.showInputDialog("Enter Seat Number (1-30):"));
                         booking.chooseSeat(seat);
                     } catch (Exception e) {
                         JOptionPane.showMessageDialog(null, e.getMessage());
