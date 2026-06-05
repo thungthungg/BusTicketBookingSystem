@@ -1,5 +1,7 @@
 import javax.swing.JOptionPane;
 
+package busbooking;
+
 public class Passenger {
     private String id;
    private String name;
