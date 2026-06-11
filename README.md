@@ -92,9 +92,6 @@ The system supports **multiple ticket types** (Standard & Premium), **dynamic di
 
 ---
 
-
----
-
 ## 🎮 User Guide
 
 ### Main Menu Options
@@ -179,5 +176,3 @@ This project is developed for **educational and academic purposes** only.
 *Developed with ☕ Java and OOP principles*
 
 </div>
-
-## 📂 Project Structure
