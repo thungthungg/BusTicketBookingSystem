@@ -1,27 +1,12 @@
 # 🚌 Bus Ticket Booking System
 
-[![Java](https://img.shields.io/badge/Java-ED8B00?style=for-the-badge&logo=openjdk&logoColor=white)](https://www.java.com/)
-[![Swing](https://img.shields.io/badge/Swing-5382a1?style=for-the-badge&logo=java&logoColor=white)](https://docs.oracle.com/javase/tutorial/uiswing/)
-[![OOP](https://img.shields.io/badge/OOP-4B8BBE?style=for-the-badge&logo=object&logoColor=white)](https://en.wikipedia.org/wiki/Object-oriented_programming)
-[![Version](https://img.shields.io/badge/Version-2.0-blue?style=for-the-badge)]()
-
-<p align="center">
-  <img src="https://img.shields.io/badge/Status-Active-brightgreen?style=flat-square" alt="Active">
-  <img src="https://img.shields.io/badge/Platform-Cross%20Platform-lightgrey?style=flat-square" alt="Cross Platform">
-  <img src="https://img.shields.io/badge/License-Academic-blue?style=flat-square" alt="Academic">
-</p>
-
----
-
 ## 📖 Table of Contents
 
 - [✨ Overview](#-overview)
 - [🚀 Features](#-features)
 - [📚 OOP Concepts](#-oop-concepts)
 - [🛠️ Technologies](#️-technologies)
-- [📂 Project Structure](#-project-structure)
 - [🎮 User Guide](#-user-guide)
-- [👥 Contributors](#-contributors)
 
 ---
 
@@ -137,21 +122,6 @@ The system supports **multiple ticket types** (Standard & Premium), **dynamic di
 - ✅ View all booking records
 - ✅ Generate unique Booking IDs
 - ✅ Handle errors gracefully with custom exceptions
-
----
-
-## 👥 Contributors
-
-This project is developed as a group assignment. Team members contributed to:
-
-| Module | Responsibility |
-|--------|----------------|
-| Passenger Management | Passenger class implementation |
-| Ticket Management | Ticket, StandardTicket, PremiumTicket |
-| Booking Management | Booking class & discount logic |
-| Exception Handling | Custom exceptions & validation |
-| UI & Integration | Main menu & system workflow |
-| Documentation | README & project report |
 
 ---
 
