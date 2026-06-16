@@ -41,7 +41,7 @@ public class Main {
                 case "2" -> cancelBooking();
                 case "3" -> viewAllBookings();
                 case "4" -> viewAvailableRoutes();
-                default -> JOptionPane.showMessageDialog(null, "Invalid choice! Please enter 1-4");
+                default -> JOptionPane.showMessageDialog(null, "Invalid choice! Please enter 1-5");
             }
         }
     }
@@ -119,42 +119,129 @@ public class Main {
             JOptionPane.showMessageDialog(null, "=== TRAVEL REQUIREMENTS ===");
 
             String origin = "";
+
             while (true) {
-                origin = JOptionPane.showInputDialog("Enter Origin City (or click Cancel to exit):");
+
+                String routeMsg = "===== AVAILABLE ROUTES =====\n\n";
+
+                ArrayList<String> shownRoutes = new ArrayList<>();
+
+                for (Ticket t : availableTickets) {
+
+                    String route = t.getOrigin() + " → " + t.getDestination();
+
+                    if (!shownRoutes.contains(route)) {
+                        shownRoutes.add(route);
+                        routeMsg += shownRoutes.size() + ". " + route + "\n";
+                    }
+                }
+
+                routeMsg += "\n============================\n";
+                routeMsg += "Enter Origin City (or click Cancel to exit):";
+
+                origin = JOptionPane.showInputDialog(routeMsg);
+
                 if (origin == null) {
                     JOptionPane.showMessageDialog(null, "Booking cancelled.");
                     return;
                 }
-                if (!origin.equals("")) {
+
+                if (!origin.trim().isEmpty()) {
                     break;
                 }
-                JOptionPane.showMessageDialog(null, "Origin City cannot be empty! Please enter again.");
+
+                JOptionPane.showMessageDialog(
+                    null,
+                    "Origin City cannot be empty! Please enter again."
+                );
             }
 
             String destination = "";
+
             while (true) {
-                destination = JOptionPane.showInputDialog("Enter Destination City (or click Cancel to exit):");
+
+                String destPreview = "===== AVAILABLE DESTINATIONS =====\n\n";
+
+                ArrayList<String> shownDest = new ArrayList<>();
+
+                for (Ticket t : availableTickets) {
+
+                    if (t.getOrigin().equalsIgnoreCase(origin)) {
+
+                    String dest = t.getDestination();
+
+                    if (!shownDest.contains(dest)) {
+                        shownDest.add(dest);
+                        destPreview += shownDest.size() + ". " + dest + "\n"; }
+                    }
+                }
+
+                if (shownDest.isEmpty()) {
+                    JOptionPane.showMessageDialog(null,
+                    "No destinations found for origin: " + origin);
+                    return;
+                }
+
+                destPreview += "\n============================\n";
+                destPreview += "Enter Destination City (or click Cancel to exit):";
+
+                destination = JOptionPane.showInputDialog(destPreview);
+
                 if (destination == null) {
                     JOptionPane.showMessageDialog(null, "Booking cancelled.");
                     return;
                 }
-                if (!destination.equals("")) {
+
+                if (!destination.trim().isEmpty()) {
                     break;
                 }
-                JOptionPane.showMessageDialog(null, "Destination City cannot be empty! Please enter again.");
+
+                JOptionPane.showMessageDialog(null,
+                "Destination cannot be empty! Please enter again.");
             }
 
             String date = "";
+
             while (true) {
-                date = JOptionPane.showInputDialog("Enter Travel Date (YYYY-MM-DD) (or click Cancel to exit):");
+
+                String datePreview = "===== AVAILABLE DATES =====\n\n";
+
+                ArrayList<String> shownDates = new ArrayList<>();
+
+                for (Ticket t : availableTickets) {
+
+                    if (t.getOrigin().equalsIgnoreCase(origin) && t.getDestination().equalsIgnoreCase(destination)) {
+
+                    String d = t.getTravelDate();
+
+                    if (!shownDates.contains(d)) {
+                        shownDates.add(d);
+                        datePreview += shownDates.size() + ". " + d + "\n"; }
+                    }
+                }
+
+                if (shownDates.isEmpty()) {
+                    JOptionPane.showMessageDialog(null,
+                 "No travel dates found for this route.");
+                        return;
+                }
+
+                datePreview += "\n============================\n";
+                datePreview += "Enter Travel Date (YYYY-MM-DD):";
+
+                date = JOptionPane.showInputDialog(datePreview);
+
                 if (date == null) {
                     JOptionPane.showMessageDialog(null, "Booking cancelled.");
                     return;
                 }
-                if (!date.equals("")) {
+
+                if (!date.trim().isEmpty()) {
                     break;
                 }
-                JOptionPane.showMessageDialog(null, "Travel Date cannot be empty! Please enter again.");
+
+                JOptionPane.showMessageDialog(null,
+                "Travel Date cannot be empty! Please enter again.");
             }
 
             ArrayList<Ticket> matchingTickets = new ArrayList<>();
@@ -294,11 +381,15 @@ public class Main {
             if (booking.isConfirmed()) {
                 allBookings.add(booking);
                 JOptionPane.showMessageDialog(null,
-                    "✓ BOOKING SUCCESSFUL!\n" +
+                    "✓ BOOKING SUCCESSFUL!\n\n" +
+                    "Booking Details:\n" +
+                    "----------------------\n" +
                     "Booking ID: " + bookingId + "\n" +
                     "Passenger ID: " + passengerId + "\n" +
-                    "Discount: " + discountType + "\n" +
-                    "Please save your Booking ID and Passenger ID for cancellation.");
+                    "Discount: " + discountType + "\n\n" +
+                    "IMPORTANT:\n" +
+                    "Please save your Booking ID and Passenger ID.\n" +
+                    "They are required for cancellation." );
             }
 
         } catch (TicketNotAvailableException e) {
