@@ -444,8 +444,8 @@ public class Main {
         }
 
         int confirm = JOptionPane.showConfirmDialog(null,
-            "Are you sure you want to cancel this booking?\n" +
-            "\nBooking ID: " + bookingId + "\n" +
+            "Are you sure you want to cancel this booking?\n\n" +
+            "Booking ID: " + bookingId + "\n" +
             "Passenger ID: " + passengerId + "\n" +
             "Passenger Name: " + bookingToCancel.getPassenger().getName() + "\n" +
             "Destination: " + bookingToCancel.getTicket().getOrigin() + " → " +
