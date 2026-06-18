@@ -1,7 +1,6 @@
 package busbooking.model;
 
 import javax.swing.JOptionPane;
-import busbooking.sysinterface.Discountable;
 
 public class PremiumTicket extends Ticket {
 
